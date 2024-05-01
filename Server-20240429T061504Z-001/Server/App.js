@@ -7,7 +7,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin :["https://deploy-mern-1whq.vercel.app"],
+        methods:["POST,"GET"],
+        credentials:true
+    }
+));
 
 // MongoDB Connection
 mongoose.connect('mongodb+srv://moses1234563:scabmoses345@cluster0.xk17i49.mongodb.net/Challenge2?retryWrites=true&w=majority&appName=Cluster0')
