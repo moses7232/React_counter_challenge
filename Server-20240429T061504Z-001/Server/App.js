@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use('/counter',router)
 app.use(cors(
     {
         origin :["https://deploy-mern-1whq.vercel.app"],
